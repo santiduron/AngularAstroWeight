@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="planets">
+
+<head>
+  <title>Astroid Caluclator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body ng-controller="HomeController as homeCtrl">
+  <h1>Astro Weight Calculator</h1>
+
+  <div>
+
+      <p>Enter your weight : <input type="text" ng-model="homeCtrl.weight"></p>
+
+
+      <select ng-model="homeCtrl.selectedPlanet" ng-options="planet as planet[0] for planet in homeCtrl.planets"></select>
+      <p ng-if="homeCtrl.selectedPlanet && homeCtrl.weight">
+
+          If you were on {{homeCtrl.selectedPlanet[0]}}, you would weigh {{homeCtrl.selectedPlanet[1] * homeCtrl.weight}} lbs.
+      </p>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
